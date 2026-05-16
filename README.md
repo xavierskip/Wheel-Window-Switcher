@@ -50,6 +50,10 @@
 
   同时，可以根据[Hotkeys 文档](https://www.autohotkey.com/docs/v1/Hotkeys.htm)自行修改绑定快捷键。
 
+  > [!NOTE]  
+  > `Ctrl` + 鼠标滚轮常用于浏览器的页面缩放，所以`Ctrl`按键在这里不适合作为快捷键的一部分。
+
+
 - **哪些窗口会参与循环切换？**
 
   同时满足以下条件的窗口才会被纳入切换列表：
@@ -110,6 +114,9 @@ Create a shortcut to `cylinder.ahk` and place it in:
   We originally wanted to use `Win + Shift + Wheel` as the shortcut, but in some cases it triggers [Office web popups](https://go.microsoft.com/fwlink/?linkid=2044481). So we switched to `Alt + Shift + Wheel` instead.
 
   You can also customize the hotkey by referring to the [Hotkeys documentation](https://www.autohotkey.com/docs/v1/Hotkeys.htm).
+
+  > [!NOTE]
+  > `Ctrl` + mouse wheel is commonly used for page zooming in browsers, so the `Ctrl` key is not suitable as part of a shortcut here.
 
 - **Which windows are included in the cycle?**
 
