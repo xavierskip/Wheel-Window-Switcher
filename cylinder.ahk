@@ -2,7 +2,7 @@
 #SingleInstance Force
 
 ; =====================================================================
-;  WheelWindowSwitcher — Alt + Shift + 滚轮 切换当前屏幕窗口
+;  WheelWindowSwitcher — 快捷键 + 滚轮 循环切换当前屏幕窗口
 ;  需要 AutoHotkey v2.0+  |  https://www.autohotkey.com/
 ; =====================================================================
 ;  向下滚：当前顶层窗口沉底，下一个窗口浮上来
@@ -10,7 +10,7 @@
 ;  多屏幕：只切换鼠标所在屏幕的窗口
 ; =====================================================================
 
-A_IconTip := "cylinder — 快捷键+滚轮切换窗口"
+A_IconTip := "cylinder — 快捷键+滚轮循环切换窗口"
 
 ; 改用 [Alt] + [Shift] + [滚轮]，避开 Windows 键引发的 Office 网页弹窗冲突
 ; 可根据文档 https://www.autohotkey.com/docs/v1/Hotkeys.htm 来修改快捷键
@@ -60,8 +60,23 @@ CycleWindowsOnMonitor(Direction) {
     }
 
     ; 3. 执行切换逻辑
-    if (validWindows.Length < 2)
-        return ; 只有一个窗口或没有窗口时不进行操作
+    if (validWindows.Length == 0)
+        return ; 没有窗口时不进行操作
+
+    if (validWindows.Length == 1) {
+        ; 只有一个窗口时，循环切换最大化和还原状态
+        hwnd := validWindows[1]
+        try {
+            if (WinGetMinMax(hwnd) == 1) {
+                WinRestore(hwnd)
+            } else {
+                WinMaximize(hwnd)
+            }
+        } catch {
+            ; 遇到权限不足的窗口，静默忽略
+        }
+        return
+    }
 
     if (Direction == "Next") {
         ; 使用 try-catch 包裹，如果遇到管理员权限的窗口导致拒绝访问，直接忽略，防止脚本崩溃报错
