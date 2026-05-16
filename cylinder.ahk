@@ -10,9 +10,10 @@
 ;  多屏幕：只切换鼠标所在屏幕的窗口
 ; =====================================================================
 
-A_IconTip := "cylinder — Alt+Shift+滚轮切换窗口"
+A_IconTip := "cylinder — 快捷键+滚轮切换窗口"
 
 ; 改用 [Alt] + [Shift] + [滚轮]，避开 Windows 键引发的 Office 网页弹窗冲突
+; 可根据文档 https://www.autohotkey.com/docs/v1/Hotkeys.htm 来修改快捷键
 !+WheelDown::CycleWindowsOnMonitor("Next")
 !+WheelUp::CycleWindowsOnMonitor("Prev")
 
