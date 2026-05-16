@@ -64,7 +64,7 @@
   最小化的窗户不在切换到范围之内。
 
 > [!WARNING]  
-> 任务管理器窗口会干扰此脚本的运行。目前还不清楚其机制，暂时无法消除其影响。关闭任务管理器可恢复正常。
+> 任务管理器窗口会干扰此脚本的运行。可能是因为权限机制的影响，暂时无法消除其影响。关闭任务管理器可恢复正常，或者以管理员身份运行此脚本。
 
 ### 许可证
 
@@ -131,7 +131,7 @@ Create a shortcut to `cylinder.ahk` and place it in:
   Minimized windows are not included in the switching scope.
 
 > [!WARNING]  
-> The Task Manager window interferes with this script's operation. The mechanism is currently unknown and cannot be eliminated at this time. Close Task Manager to restore normal functionality.
+> The Task Manager window may interfere with the operation of this script. This may be due to permission mechanisms, and the impact cannot be eliminated for now. Closing Task Manager can restore normal operation, or run this script as an administrator.
 
 ### License
 

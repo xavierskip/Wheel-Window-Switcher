@@ -39,23 +39,34 @@ CycleWindowsOnMonitor(Direction) {
 
     for hwnd in allWindows {
         ; 过滤掉没有标题的隐藏程序
-        if (WinGetTitle(hwnd) == "")
+        try {
+            if (WinGetTitle(hwnd) == "")
+                continue
+        } catch {
             continue
-        
+        }
+
         ; 过滤掉工具窗口 (WS_EX_TOOLWINDOW)
-        exStyle := WinGetExStyle(hwnd)
-        if (exStyle & 0x80) 
+        try {
+            exStyle := WinGetExStyle(hwnd)
+            if (exStyle & 0x80)
+                continue
+        } catch {
             continue
+        }
 
         ; 获取窗口位置，判断是否在当前鼠标所在的显示器内
         try {
             WinGetPos &wX, &wY, &wW, &wH, hwnd
             wCenterX := wX + (wW / 2)
             wCenterY := wY + (wH / 2)
-            
+
             if (wCenterX >= mLeft && wCenterX <= mRight && wCenterY >= mTop && wCenterY <= mBottom) {
                 validWindows.Push(hwnd)
             }
+        } catch {
+            ; 获取位置失败，跳过此窗口
+            continue
         }
     }
 
@@ -83,15 +94,17 @@ CycleWindowsOnMonitor(Direction) {
         try {
             WinMoveBottom(validWindows[1])
             WinActivate(validWindows[2])
-        } catch {
+        } catch Error as err {
             ; 遇到权限不足的窗口，静默忽略
+            ; ToolTip "Error: " . err.Message  ; 调试时可取消注释
         }
     } else {
         bottomWin := validWindows[validWindows.Length]
         try {
             WinActivate(bottomWin)
-        } catch {
+        } catch Error as err {
             ; 遇到权限不足的窗口，静默忽略
+            ; ToolTip "Error: " . err.Message  ; 调试时可取消注释
         }
     }
 }
