@@ -50,7 +50,7 @@
 
   同时，可以根据[Hotkeys 文档](https://www.autohotkey.com/docs/v1/Hotkeys.htm)自行修改绑定快捷键。
 
-> [!NOTE]
+> [!TIP]
 > `Ctrl` + 鼠标滚轮常用于浏览器的页面缩放，所以`Ctrl`按键在这里不适合作为快捷键的一部分。
 
 
@@ -62,6 +62,9 @@
   - 窗口中心点位于鼠标当前所在的显示器内
 
   最小化的窗户不在切换到范围之内。
+
+> [!WARNING]  
+> 任务管理器窗口会干扰此脚本的运行。目前还不清楚其机制，暂时无法消除其影响。关闭任务管理器可恢复正常。
 
 ### 许可证
 
@@ -115,7 +118,7 @@ Create a shortcut to `cylinder.ahk` and place it in:
 
   You can also customize the hotkey by referring to the [Hotkeys documentation](https://www.autohotkey.com/docs/v1/Hotkeys.htm).
 
-> [!NOTE]
+> [!TIP]
 > `Ctrl` + mouse wheel is commonly used for page zooming in browsers, so the `Ctrl` key is not suitable as part of a shortcut here.
 
 - **Which windows are included in the cycle?**
@@ -126,6 +129,9 @@ Create a shortcut to `cylinder.ahk` and place it in:
   - Window center point is located on the monitor where the mouse currently is
 
   Minimized windows are not included in the switching scope.
+
+> [!WARNING]  
+> The Task Manager window interferes with this script's operation. The mechanism is currently unknown and cannot be eliminated at this time. Close Task Manager to restore normal functionality.
 
 ### License
 
