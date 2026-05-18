@@ -42,6 +42,16 @@
 %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
 ```
 
+### 以 UI Access 运行
+
+如果你遇到了某些窗口失效的情况，因为权限的关系，你需要以`UI Access`的方式运行脚本。
+
+1. 首先 AutoHotkey 安装模式选择`All users`，这样你的安装路径是`C:\Program Files\AutoHotkey`
+
+2. 安装完毕后，打开`AutoHotkey Dash`，选择`Lanuch settings`，将`UI Access`勾选上。
+
+3. 正常运行脚本或者鼠标邮件点击`Run with UI access`。
+
 ### F&Q
 
 - **为什么要使用 `Alt + Shift + 滚轮` 作为快捷键？**
@@ -64,7 +74,7 @@
   最小化的窗户不在切换到范围之内。
 
 > [!WARNING]  
-> 任务管理器窗口会干扰此脚本的运行。可能是因为权限机制的影响，暂时无法消除其影响。关闭任务管理器可恢复正常，或者以管理员身份运行此脚本。
+> 任务管理器等窗口会干扰此脚本的运行，应该是受到权限的影响。处理方法请参考 [以 UI Access 运行](#以-UI-Access-运行)
 
 ### 许可证
 
@@ -110,6 +120,16 @@ Create a shortcut to `cylinder.ahk` and place it in:
 %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
 ```
 
+### Run with UI Access
+
+If you encounter issues with certain windows not working due to permission restrictions, you need to run the script with `UI Access`.
+
+1. First, select `All users` as the installation mode for AutoHotkey, so that your installation path is `C:\Program Files\AutoHotkey`.
+
+2. After installation, open `AutoHotkey Dash`, select `Launch settings`, and check the `UI Access` option.
+
+3. Run the script normally, or right-click and select `Run with UI access`.
+
 ### F&Q
 
 - **Why use `Alt + Shift + Wheel` as the shortcut?**
@@ -131,7 +151,7 @@ Create a shortcut to `cylinder.ahk` and place it in:
   Minimized windows are not included in the switching scope.
 
 > [!WARNING]  
-> The Task Manager window may interfere with the operation of this script. This may be due to permission mechanisms, and the impact cannot be eliminated for now. Closing Task Manager can restore normal operation, or run this script as an administrator.
+> Windows such as Task Manager may interfere with the execution of this script, likely due to permission restrictions. For a solution, please refer to [Run with UI Access](#Run-with-UI-Access).
 
 ### License
 
