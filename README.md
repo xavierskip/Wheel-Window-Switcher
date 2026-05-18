@@ -71,7 +71,7 @@
   - 不是工具窗口（如浮动工具栏）
   - 窗口中心点位于鼠标当前所在的显示器内
 
-  最小化的窗户不在切换到范围之内。
+  **最小化的窗口不在切换的范围之内。**
 
 > [!WARNING]  
 > 任务管理器等窗口会干扰此脚本的运行，应该是受到权限的影响。处理方法请参考 [以 UI Access 运行](#以-UI-Access-运行)
@@ -148,7 +148,7 @@ If you encounter issues with certain windows not working due to permission restr
   - Not tool windows (such as floating toolbars)
   - Window center point is located on the monitor where the mouse currently is
 
-  Minimized windows are not included in the switching scope.
+  **Minimized windows are not included in the switching scope.**
 
 > [!WARNING]  
 > Windows such as Task Manager may interfere with the execution of this script, likely due to permission restrictions. For a solution, please refer to [Run with UI Access](#Run-with-UI-Access).
